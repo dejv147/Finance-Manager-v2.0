@@ -1,0 +1,66 @@
+﻿<Window x:Class="SpravceFinanci_v2.Vyhledat_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpravceFinanci_v2"
+        mc:Ignorable="d"
+        Title="Vyhledávání" Height="720" Width="800" MinHeight="720" MinWidth="750" Icon="Icons/Lupa.ico"
+        WindowStartupLocation="CenterScreen" Background="LightBlue">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <CheckBox Name="Nazev_CheckBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="20,30,0,0" IsChecked="False"/>
+        <TextBlock Text="Název:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="50,22,0,0"/>
+        <TextBox Name="NazevTextBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,22,0,0" Height="30" Width="150" FontSize="16" VerticalContentAlignment="Center" TextChanged="NazevTextBox_TextChanged"/>
+
+        <CheckBox Name="Datum_CheckBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="20,100,0,0" IsChecked="False"/>
+        <TextBlock Text="Datum   od:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="50,92,0,0"/>
+        <TextBlock Text="do:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="133,125,0,0"/>
+        <DatePicker Name="DatumMIN_DatePicker" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="170,90,0,0" Height="30" Width="150" VerticalContentAlignment="Center" SelectedDateChanged="DatumMIN_DatePicker_SelectedDateChanged"/>
+        <DatePicker Name="DatumMAX_DatePicker" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="170,125,0,0" Height="30" Width="150" VerticalContentAlignment="Center" SelectedDateChanged="DatumMAX_DatePicker_SelectedDateChanged"/>
+
+        <CheckBox Name="Hodnota_CheckBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="20,200,0,0" IsChecked="False"/>
+        <TextBlock Text="Hodnota  od:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="45,192,0,0"/>
+        <TextBlock Text="do:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="142,225,0,0"/>
+        <TextBox Name="HodnotaMINTextBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,190,0,0" Height="30" Width="150" FontSize="16" VerticalContentAlignment="Center" TextChanged="HodnotaMINTextBox_TextChanged"/>
+        <TextBox Name="HodnotaMAXTextBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,225,0,0" Height="30" Width="150" FontSize="16" VerticalContentAlignment="Center" TextChanged="HodnotaMAXTextBox_TextChanged"/>
+
+        <CheckBox Name="Kategorie_CheckBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="20,320,0,0" IsChecked="False"/>
+        <TextBlock Text="Kategorie:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="50,312,0,0"/>
+        <ComboBox Name="KategorieComboBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="155,310,0,0" Width="170" SelectionChanged="KategorieComboBox_SelectionChanged"/>
+
+        <CheckBox Name="Polozky_CheckBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="20,390,0,0" IsChecked="False"/>
+        <TextBlock Text="Obsahuje počet položek" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="45,382,0,0"/>
+        <TextBlock Text="od:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="142,425,0,0"/>
+        <TextBlock Text="do:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="142,455,0,0"/>
+        <TextBox Name="PolozkyMINTextBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,420,0,0" Height="30" Width="150" FontSize="16" VerticalContentAlignment="Center" TextChanged="PolozkyMINTextBox_TextChanged"/>
+        <TextBox Name="PolozkyMAXTextBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,455,0,0" Height="30" Width="150" FontSize="16" VerticalContentAlignment="Center" TextChanged="PolozkyMAXTextBox_TextChanged"/>
+
+        <CheckBox Name="Prijmy_CheckBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="50,530,0,0" IsChecked="True" />
+        <TextBlock Text="Příjmy" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="75,522,0,0"/>
+
+        <CheckBox Name="Vydaje_CheckBox" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="190,530,0,0" IsChecked="True"/>
+        <TextBlock Text="Výdaje" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="215,522,0,0"/>
+
+        <StackPanel Name="Prehled" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,570,0,0" Orientation="Vertical" Background="Aqua">
+            <Label Content="Souhrný přehled:" FontSize="18" Foreground="DarkBlue" FontWeight="Medium"/>
+            <TextBlock Name="PocetZaznamuTextBlock" FontSize="18"/>
+            <TextBlock Name="CelkoveVydajeTextBlock" FontSize="20" Foreground="Red"/>
+            <TextBlock Name="CelkovePrijmyTextBlock" FontSize="20" Foreground="Green"/>
+        </StackPanel>
+
+
+        <Button Name="VyhledatButton" Content="Vyhledat" Width="150" Height="120" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="250,50,0,40" FontSize="30" FontWeight="Bold" Click="VyhledatButton_Click"  Background="LawnGreen"/>
+        <Button Name="ZrusitButton" Content="Zrušit vyhledání" Width="200" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,30" FontSize="27" Click="ZrusitButton_Click" MouseDoubleClick="ZrusitButton_MouseDoubleClick" Background="Orange"/>
+        <Button Name="OdebratButton" Content="Smazat záznam" Width="200" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,120" FontSize="27" Click="OdebratButton_Click"  Background="Red"/>
+
+        <Canvas Name="SeznamZaznamuCANVAS" Width="300" Height="450" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" />
+        <Canvas Name="InfoBublinaCanvas" Height="180" Width="400" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" />
+
+    </Grid>
+</Window>
+

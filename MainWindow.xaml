@@ -1,0 +1,75 @@
+﻿<Window x:Class="SpravceFinanci_v2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpravceFinanci_v2"
+        mc:Ignorable="d" Closing="HlavniOknoWindow_Closing"  Name="HlavniOknoWindow" 
+        Title="Finanční správce v2.0" Height="600" Width="800" MinHeight="460" MinWidth="450"
+        WindowStartupLocation="CenterScreen" Icon="Icons/Penezenka_s_penezi.ico" Background="Black">
+    <Grid Name="HlavniOknoGrid" Background="LightBlue" Margin="2,2,2,2">
+
+
+        <Canvas Name="LeveMENU_Canvas" Panel.ZIndex="2" HorizontalAlignment="Left" />
+        <Canvas Name="PraveMENU_Canvas" Panel.ZIndex="2" HorizontalAlignment="Right" />
+
+        <Canvas Name="NeprihlasenyUzivatel_Canvas" Panel.ZIndex="3"/>
+
+        <Canvas Name="UvodniSeznamZaznamuCanvas" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,40,0,0" Height="450" Width="300"/>
+
+        <StackPanel Name="PoznamkovyBlokStackPanel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="370,10,50,20" Height="150" Width="350" >
+            <Label Content="Poznámkový blok: " FontSize="14" FontWeight="Medium"/>
+            <TextBox Name="PoznamkovyBlokTextBox" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="14" Height="120" Width="350" TextWrapping="Wrap"  AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+        </StackPanel>
+
+
+        <Canvas Name="PrehledCanvas" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="370,10,50,190" Height="120" Width="350"/>
+        <Canvas Name="InformacniBublinaCanvas" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="370,80,50,0" Height="150" Width="350"/>
+
+
+        <Grid Name="DatumCas_Grid" Background="WhiteSmoke" Width="180" Height="70" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,30,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Name="AnalogoveHodiny_Grid" Grid.RowSpan="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Image Name="AnalogoveHodinyImage" Source="Icons/cifernikD1.jpg"/>
+
+                <Rectangle Name="HodinovaRucicka" Margin="34.3,0,34.3,20" VerticalAlignment="Center" HorizontalAlignment="Center" Fill="DarkRed" Stroke="DarkRed" StrokeThickness="1" Height="20">
+                    <Rectangle.RenderTransform>
+                        <RotateTransform x:Name="HodinovaRucickaRotace" CenterX="0.5" CenterY="20" Angle="0" />
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+
+                <Rectangle Name="MinutovaRucicka" Margin="30,0,30,25" Stroke="DarkBlue" StrokeThickness="1" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Rectangle.RenderTransform>
+                        <RotateTransform x:Name="MinutovaRucickaRotace" CenterX="1" CenterY="25" Angle="0"/>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+
+                <Rectangle Name="VterinovaRucicka" Margin="30.5,0,30.5,30" Stroke="GreenYellow" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Rectangle.RenderTransform>
+                        <RotateTransform x:Name="VterinovaRucickaRotace" CenterX="1" CenterY="30.5" Angle="0"/>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+            </Grid>
+
+            <Label Name="DatumLabel" Grid.Column="1" Grid.Row="0" Content="00:00:0000" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Label Name="DigitalniHodinyLabel" Grid.Column="1" Grid.Row="1" Content="00:00:00" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </Grid>
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

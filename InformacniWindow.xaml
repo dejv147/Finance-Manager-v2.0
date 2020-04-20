@@ -1,0 +1,20 @@
+﻿<Window x:Class="SpravceFinanci_v2.InformacniWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpravceFinanci_v2"
+        mc:Ignorable="d" ResizeMode="CanMinimize"
+        Title="Informace" Height="780" Width="900"
+        WindowStartupLocation="CenterScreen" Background="LightBlue" Icon="Icons/info.ico">
+    <Grid>
+        <TextBlock Name="Nazev" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10" FontWeight="Bold" FontFamily="Tahoma" TextDecorations="Underline" Foreground="DarkBlue"/>
+        <Label Name="NavodLabel" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,10,10" FontWeight="Medium"/>
+        <StackPanel Name="Autor" Margin="0,0,20,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Label  FontSize="14" Foreground="DarkRed"  Content="Autor:" />
+            <Label FontSize="16" Foreground="BlueViolet" Content="Halas David" Padding="3" FontStyle="Italic" FontWeight="SemiBold"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
+

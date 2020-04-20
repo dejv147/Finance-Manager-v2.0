@@ -1,0 +1,38 @@
+﻿<Window x:Class="SpravceFinanci_v2.Prihlaseni_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpravceFinanci_v2"
+        mc:Ignorable="d" Closing="Window_Closing"
+        Title="Uživatel" Height="250" Width="400" WindowStartupLocation="CenterScreen"
+        MinHeight="220" MaxHeight="400" MinWidth="300" MaxWidth="600"
+        Background="LightGreen" Icon="Icons/Osoba.gif">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Name="JmenoStackPanel" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Height="25">
+            <TextBlock Text="Jméno:  " FontSize="18"/>
+            <TextBox Name="JmenoUzivateleTextBox" MinWidth="200" FontSize="16" TextChanged="ZadaniJmena" Margin="0,0,0,0" />
+        </StackPanel>
+
+        <StackPanel Name="HesloStackPanel" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0,0,0" Height="25">
+            <TextBlock Text="Heslo: " FontSize="18"/>
+            <PasswordBox Name="HesloUzivatelePasswordBox" MinWidth="200" FontSize="16" PasswordChanged="ZadaniHesla" Margin="12,0,0,0" />
+        </StackPanel>
+        <TextBlock Name="HesloUzivateleTextBlock" MinWidth="200" FontSize="16" Grid.Row="0" HorizontalAlignment="Left" Margin="86,0,0,0" Height="25" Background="White" />
+
+
+        <Button Name="PrihlaseniButton" Content="Přihlásit" Grid.Row="0" FontSize="20" Width="130" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+        <Button Name="ZobrazHesloButton" Content="Zobrazit heslo" Grid.Row="2" FontSize="16" FontWeight="Medium" Width="130" Margin="10,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Button Name="RegistraceButton" Content="Zaregistrovat se" Grid.Row="2" FontSize="16" FontWeight="Medium" Width="130" Margin="0,0,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" />
+
+        <Rectangle Grid.Row="1" Height="2" VerticalAlignment="Bottom" Fill="#FF004600" OpacityMask="#FF004600"/>
+
+    </Grid>
+</Window>
