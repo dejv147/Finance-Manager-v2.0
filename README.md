@@ -12,7 +12,7 @@ Každý uživatel je identifikovám uživatelským jménem a heslem. Díky tomu 
 Program zpracovává a uchovává jednotlivé finanční záznamy představující konkrétní finanční transakce (například nákup v obchodě - účtenka). 
 Každý záznam obsahuje základní údaje pro jeho identifikaci, je přidělen do určité kategorie pro možnost třídění, může obsahovat textovou poznámku a seznam položek (například jednotlivé položky na účtence). 
 Záznamy je možné přidávat, upravovat a smazat. 
-Záznamy lze vhyledat dle zvolených parametrů, exportovat vybrané zánamy do souboru, nebo zobrazit statisticky vyhodnocené záznamy v podobě grafu. 
+Záznamy lze vyhledat dle zvolených parametrů, exportovat vybrané záznamy do souboru, nebo zobrazit statisticky vyhodnocené záznamy v podobě grafu. 
 Graf může vyhodnocovat záznamy dle kategorií, nebo dle zvoleného časového období, kdy vyhodnocuje záznamy v jednotlivých časových intervalech.
 ***
 
